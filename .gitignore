@@ -1,0 +1,19 @@
+# Ambiente virtual
+.venv/
+
+# Variáveis de ambiente
+.env
+
+# Cache do Python em qualquer nível
+__pycache__/
+**/__pycache__/
+
+# Arquivos compilados do Python
+*.pyc
+
+# Pasta do vs code
+.vscode/
+
+# Banco de teste
+*.db
+
