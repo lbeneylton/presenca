@@ -79,5 +79,5 @@ goto menu
 :start
 cd app
 echo Iniciando servidor...
-uvicorn main:app --host 0.0.0.0 --port 5000 --reload
+uvicorn main:app --host 0.0.0.0 --port 7000 --reload
 pause

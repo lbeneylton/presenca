@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alunos | Cadastro</title>
+	</head>
+	<body>
+		<header>
+			<h1>Cadastro de Aluno</h1>
+		</header>
+
+		<main>
+			<form action="">
+				<div class="campo">
+					<label for="nome">Nome</label>
+					<input
+						id="name"
+						type="text"
+						placeholder="Nome Completo"
+						required
+					/>
+				</div>
+
+				<div class="campo">
+					<label for="contato">Contato</label>
+					<input
+						id="contato"
+						type="tel"
+						placeholder="(98) 98989-9898"
+					/>
+				</div>
+
+				<div class="campo">
+					<label for="data-matricula">Data de Matricula</label>
+					<input type="date" id="data-matricula" />
+				</div>
+
+				<div class="campo">
+					<label for="tipo">Tipo</label>
+					<select id="tipo">
+						<option value="A" selected>Adulto</option>
+						<option value="K">Kids</option>
+					</select>
+				</div>
+
+				<div class="campo">
+					<label for="turno">Tipo</label>
+					<select id="turno">
+						<option value="M" selected>Manhã</option>
+						<option value="T">Tarde</option>
+					</select>
+				</div>
+
+				<div class="campo">
+					<label for="outro-curso">O aluno já faz um curso?</label>
+					<input type="checkbox" id="outro-curso" />
+				</div>
+			</form>
+		</main>
+	</body>
+</html>
