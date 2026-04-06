@@ -1,13 +1,13 @@
 # importação da Base
 from core.config import DB_settings
-from models.base import Base
+from db.base import Base
 
 from logging.config import fileConfig
 
 from alembic import context
 
 
-from models import *
+from db.models import *
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
