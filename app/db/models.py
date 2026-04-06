@@ -54,8 +54,8 @@ class Presenca(Base):
     data: Mapped[date] = mapped_column(Date, nullable=False, primary_key=True)
 
     # Relacionamentos
-    Aluno = relationship("Aluno", back_populates="presencas")
-    Aula = relationship("Aula", back_populates="presencas")
+    aluno = relationship("Aluno", back_populates="presencas")
+    tema = relationship("Tema", back_populates="presencas")
 
 
 class Usuario(Base):

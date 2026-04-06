@@ -1,4 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
+
 from core.session import get_session
 
 from cadastros.service import AlunoService, ServiceTema
@@ -8,6 +10,22 @@ from cadastros.schema import CadastroAluno, AlunoResponse, CadastroTema, Respons
 
 
 app = FastAPI()
+
+
+# Configuração CORS
+origins = [
+    "http://127.0.0.1:7000",
+    "http://localhost:7000"  # endereço do seu frontend
+    # você pode adicionar "http://localhost:7000" se estiver usando localhost
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # permite esses domínios
+    allow_credentials=True,
+    allow_methods=["*"],     # permite GET, POST, PUT, DELETE, etc
+    allow_headers=["*"],     # permite todos os headers
+)
 
 
 @app.get("/")

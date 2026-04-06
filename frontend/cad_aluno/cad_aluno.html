@@ -11,7 +11,7 @@
 		</header>
 
 		<main>
-			<form action="">
+			<form id="cadastro-aluno">
 				<div class="campo">
 					<label for="nome">Nome</label>
 					<input
@@ -56,7 +56,14 @@
 					<label for="outro-curso">O aluno já faz um curso?</label>
 					<input type="checkbox" id="outro-curso" />
 				</div>
+
+				<div class="campo">
+					<button id="btn-cadastrar" type="submit">
+						Cadastrar Aluno
+					</button>
+				</div>
 			</form>
 		</main>
+		<script type="module" src="service_aluno.js"></script>
 	</body>
 </html>
