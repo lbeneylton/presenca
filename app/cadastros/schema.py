@@ -21,10 +21,10 @@ class AlunoResponse(BaseModel):
     status: str
 
 
-class CadastroAula(BaseModel):
+class CadastroTema(BaseModel):
     nome: str
 
 
-class AulaResponse(BaseModel):
+class ResponseTema(BaseModel):
     id_aula: int
     nome: str

@@ -1,6 +1,6 @@
-from db.models import Aluno, Aula
+from db.models import Aluno, Tema
 
-from .schema import CadastroAluno, CadastroAula
+from .schema import CadastroAluno, CadastroTema
 
 from sqlalchemy.orm import Session
 
@@ -28,12 +28,12 @@ class AlunoService:
         return novo_aluno
 
 
-class AulaService:
+class ServiceTema:
     def __init__(self, session: Session) -> None:
         self.session = session
 
-    def cadastrar(self, aula: CadastroAula):
-        nova_aula = Aula(
+    def cadastrar(self, aula: CadastroTema):
+        nova_aula = Tema(
             nome=aula.nome
         )
         self.session.add(nova_aula)
@@ -43,5 +43,5 @@ class AulaService:
         return nova_aula
 
     def get_aulas(self):
-        stmt = select(Aula)
+        stmt = select(Tema)
         return self.session.scalars(stmt).all()

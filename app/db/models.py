@@ -27,17 +27,17 @@ class Aluno(Base):
     outro_curso: Mapped[bool] = mapped_column(Boolean, default=False)
 
     # Relationship
-    presencas = relationship("Presenca", back_populates="Aluno")
+    presencas = relationship("Presenca", back_populates="aluno")
 
 
-class Aula(Base):
-    __tablename__ = "Aula"
+class Tema(Base):
+    __tablename__ = "Tema"
 
-    id_aula: Mapped[int] = mapped_column(Integer, primary_key=True)
+    id_tema: Mapped[int] = mapped_column(Integer, primary_key=True)
     nome: Mapped[str] = mapped_column(String(50), nullable=False)
 
     # Relationship
-    presencas = relationship("Presenca", back_populates="Aula")
+    presencas = relationship("Presenca", back_populates="tema")
 
 
 class Presenca(Base):
@@ -48,7 +48,7 @@ class Presenca(Base):
     )
 
     id_aula: Mapped[int] = mapped_column(
-        Integer, ForeignKey("Aula.id_aula"), primary_key=True
+        Integer, ForeignKey("Tema.id_tema"), primary_key=True
     )
 
     data: Mapped[date] = mapped_column(Date, nullable=False, primary_key=True)
@@ -56,3 +56,11 @@ class Presenca(Base):
     # Relacionamentos
     Aluno = relationship("Aluno", back_populates="presencas")
     Aula = relationship("Aula", back_populates="presencas")
+
+
+class Usuario(Base):
+    __tablename__ = "usuario"
+
+    id_usuario: Mapped[int] = mapped_column(Integer, primary_key=True)
+    username: Mapped[str] = mapped_column(String(20), nullable=False)
+    password: Mapped[str] = mapped_column(String(50), nullable=False)
